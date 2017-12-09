@@ -1,9 +1,17 @@
-version: '2.0'
+version: '3.4'
 # elgoog
 services:
  pyworker:
   build: ./pyworker/
+#  image kshino/pyworker
+#  networks:
+#   - dataplane
   links: 
     - cassandra:cassandra
  cassandra:
   build: ./cassandra/
+#  networks:
+#   - dataplane
+
+networks:
+ dataplane:
