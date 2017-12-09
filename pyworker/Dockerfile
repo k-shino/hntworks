@@ -15,6 +15,6 @@ RUN git clone https://github.com/nabebugyo/elg.git
 RUN pip3 install pandas
 RUN pip3 install cqlsh==5.0.3
 
-RUN cp -r /usr/local/lib/python2.7/dist-packages/cqlshlib /usr/local/lib/python3.5/dist-packages/cqlshlib
+RUN cp -r /usr/local/lib/python3.5/dist-packages/cqlshlib /usr/local/lib/python2.7/dist-packages/cqlshlib
 
 CMD tail -f /dev/null
