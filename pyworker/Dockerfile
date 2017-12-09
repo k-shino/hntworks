@@ -7,3 +7,4 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y python3 git pytho
 RUN git clone https://github.com/nabebugyo/elg.git
 RUN pip3 install pandas
 
+CMD tail -f /dev/null

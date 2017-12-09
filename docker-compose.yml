@@ -1,0 +1,9 @@
+version: '2.0'
+# elgoog
+services:
+ pyworker:
+  build: ./pyworker/
+  links: 
+    - cassandra:cassandra
+ cassandra:
+  build: ./cassandra/
