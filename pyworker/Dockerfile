@@ -17,4 +17,6 @@ RUN pip3 install cqlsh==5.0.3
 
 RUN cp -r /usr/local/lib/python3.5/dist-packages/cqlshlib /usr/local/lib/python2.7/dist-packages/cqlshlib
 
+COPY init_db.py /
+
 CMD tail -f /dev/null
