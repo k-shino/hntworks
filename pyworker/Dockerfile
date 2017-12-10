@@ -11,12 +11,10 @@ RUN apt-get update -qq \
   && easy_install cassandra-driver
 
 ENV CQLSH_VERSION 5.0.3
-RUN git clone https://github.com/nabebugyo/elg.git
-RUN pip3 install pandas
-RUN pip3 install cqlsh==5.0.3
-
-RUN cp -r /usr/local/lib/python3.5/dist-packages/cqlshlib /usr/local/lib/python2.7/dist-packages/cqlshlib
+RUN git clone https://github.com/nabebugyo/elg.git \
+  && pip3 install pandas cqlsh==5.0.3 \
+  && cp -r /usr/local/lib/python3.5/dist-packages/cqlshlib /usr/local/lib/python2.7/dist-packages/cqlshlib
 
 COPY init_db.py /
 
-CMD tail -f /dev/null
+CMD python /init_db.py; tail -f /dev/null
